@@ -68,7 +68,7 @@ func handle_action() -> void:
 	if Input.is_action_just_pressed("action_secondary"):
 		var nearest_body = get_nearest_harvestable_body()
 		if nearest_body:
-			nearest_body.plant("seed")
+			nearest_body.plant("normal")
 
 func get_nearest_harvestable_body() -> Node:
 	var nearest_body = null

@@ -51,16 +51,7 @@ func harvest() -> int:
 		else:
 			tick_timer.start()
 		update_appearance()
-		match seed:
-			"super_healing":
-				return randi_range(1, 2)
-			"valuable":
-				return randi_range(2, 4)
-			"hard":
-				return randi_range(3, 8)
-			
-			_:
-				return 1
+		return randi_range(LemonDict.TheBigBookOfLemons[seed]["harvest_rand_min"], LemonDict.TheBigBookOfLemons[seed]["harvest_rand_max"])
 	else:
 		return 0
 	
