@@ -62,7 +62,7 @@ func handle_action() -> void:
 		var nearest_body = get_nearest_harvestable_body()
 		if nearest_body:
 			pass
-            lemon_amounts[lemon_index] += nearest_body.harvest()
+			lemon_amounts[lemon_index] += nearest_body.harvest()
 		else:
 			for body in action_area.get_overlapping_bodies():
 				pass

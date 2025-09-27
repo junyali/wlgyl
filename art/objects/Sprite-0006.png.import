@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clsd1pkub5bqk"
-path="res://.godot/imported/citrus_tree.png-5df23e95253d6955ea18e4e808f415ea.ctex"
+uid="uid://0kpolupfqhxi"
+path="res://.godot/imported/Sprite-0006.png-8dd0fd4f92b9d29a8d0e72580a875bf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/objects/citrus_tree.png"
-dest_files=["res://.godot/imported/citrus_tree.png-5df23e95253d6955ea18e4e808f415ea.ctex"]
+source_file="res://art/objects/Sprite-0006.png"
+dest_files=["res://.godot/imported/Sprite-0006.png-8dd0fd4f92b9d29a8d0e72580a875bf9.ctex"]
 
 [params]
 

@@ -12,13 +12,13 @@ config_version=5
 
 config/name="When Life Gives you Lemons"
 run/main_scene="uid://cr06ics0fghos"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 LemonDict="*res://scripts/lemon_dict.gd"
-Level="*res://scenes/level.gd"
+Global="*res://Global.gd"
 
 [display]
 

@@ -41,6 +41,7 @@ func plant(planted_seed: String) -> bool:
 func harvest() -> int:
 	if is_planted and phase == 7:
 		var current_seed = seed
+		print(seed)
 		phase = 5
 		harvest_amount += 1
 		if harvest_amount >= 3:
@@ -51,6 +52,7 @@ func harvest() -> int:
 			harvest_amount = 0
 		else:
 			tick_timer.start()
+		Global.emit_signal("update", current_seed)
 		update_appearance()
 		return randi_range(LemonDict.TheBigBookOfLemons[current_seed]["harvest_rand_min"], LemonDict.TheBigBookOfLemons[current_seed]["harvest_rand_max"])
 	else:
