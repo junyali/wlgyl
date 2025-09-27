@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b78qeb32pmxc8" path="res://scenes/crops/lemon_plot.tscn" id="2_w7c3h"]
 
 [node name="Level" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
 

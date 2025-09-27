@@ -54,12 +54,16 @@ func handle_action() -> void:
 	if Input.is_action_just_pressed("action") and not is_action:
 		is_action = true
 		action_timer.start()
+		sprite.modulate = Color(1.5, 1.5, 1.5)
+		fade_out(1)
 		var nearest_body = get_nearest_harvestable_body()
 		if nearest_body:
-			nearest_body.take_damage(1)
+			pass
+			#nearest_body.take_damage(1)
 		else:
 			for body in action_area.get_overlapping_bodies():
-				body.take_damage(1)
+				pass
+				#body.take_damage(1)
 
 func get_nearest_harvestable_body() -> Node:
 	var nearest_body = null
@@ -72,6 +76,11 @@ func get_nearest_harvestable_body() -> Node:
 				min_distance = distance
 				nearest_body = body
 	return nearest_body
+	
+func fade_out(time: float = 1.0) -> void:
+	var tween: Tween = create_tween().set_parallel()
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1), time)
+	await tween.finished
 
 func _on_action_timeout() -> void:
 	is_action = false

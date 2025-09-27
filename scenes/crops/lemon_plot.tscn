@@ -20,6 +20,7 @@ region = Rect2(80, 0, 16, 16)
 radius = 68.0294
 
 [node name="LemonPlot" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_j43yt")
 
 [node name="Sprite" type="Sprite2D" parent="."]

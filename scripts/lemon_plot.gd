@@ -38,8 +38,6 @@ func fade_out(time: float = 1.0) -> void:
 	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 0), time)
 	await tween.finished
 	queue_free()
-		
-	
 
 func show_cue() -> void:
 	if harvest_cue:
