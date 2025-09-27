@@ -59,11 +59,11 @@ func handle_action() -> void:
 		var nearest_body = get_nearest_harvestable_body()
 		if nearest_body:
 			pass
-			print(nearest_body.harvest())
+			nearest_body.harvest()
 		else:
 			for body in action_area.get_overlapping_bodies():
 				pass
-				print(nearest_body.harvest())
+				nearest_body.harvest()
 				
 	if Input.is_action_just_pressed("action_secondary"):
 		var nearest_body = get_nearest_harvestable_body()
