@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr06ics0fghos"]
+[gd_scene load_steps=3 format=3 uid="uid://cr06ics0fghos"]
 
 [ext_resource type="PackedScene" uid="uid://bm4ho44h4ukrs" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://b78qeb32pmxc8" path="res://scenes/crops/lemon_plot.tscn" id="2_w7c3h"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
+
+[node name="LemonPlot" parent="." instance=ExtResource("2_w7c3h")]
+position = Vector2(41, -3)
