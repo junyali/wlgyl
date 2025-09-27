@@ -4,10 +4,13 @@ extends CharacterBody2D
 @export var acceleration: float = 500.0 # From stationary to max speed
 @export var friction: float = 1500.0 # From max speed to stationary
 
-var current_velocity: Vector2  = Vector2.ZERO
+var current_velocity: Vector2 = Vector2.ZERO
 var move_direction: Vector2 = Vector2.ZERO
 var is_action: bool = false
 var last_hit_time: float = 0.0
+var lemon_types = ["super_healing", "valuable", "hard", "spiky", "tasty", "normal"]
+var lemon_amounts = [0, 0, 0, 0, 0, 0]
+var lemon_index = 0;
 
 @onready var sprite: Sprite2D = $Sprite
 @onready var action_area: Area2D = $Range
@@ -38,7 +41,7 @@ func handle_movement(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		move_direction = input_dir
 	else:
-		move_direction = Vector2.ZERO  # Instant stop
+		move_direction = Vector2.ZERO # Instant stop
 		
 	# Update facing direction when moving
 	if move_direction != Vector2.ZERO and not is_action:
@@ -59,16 +62,18 @@ func handle_action() -> void:
 		var nearest_body = get_nearest_harvestable_body()
 		if nearest_body:
 			pass
-			nearest_body.harvest()
+            lemon_amounts[lemon_index] += nearest_body.harvest()
 		else:
 			for body in action_area.get_overlapping_bodies():
 				pass
-				nearest_body.harvest()
+				lemon_amounts[lemon_index] += body.harvest()
 				
 	if Input.is_action_just_pressed("action_secondary"):
 		var nearest_body = get_nearest_harvestable_body()
 		if nearest_body:
-			nearest_body.plant("normal")
+			var seed = randi() % lemon_types.size()
+			lemon_index = seed
+			nearest_body.plant(lemon_types[lemon_index])
 
 func get_nearest_harvestable_body() -> Node:
 	var nearest_body = null
