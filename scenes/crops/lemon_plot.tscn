@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://b78qeb32pmxc8"]
+
+[ext_resource type="Texture2D" uid="uid://clsd1pkub5bqk" path="res://art/objects/citrus_tree.png" id="1_1yoke"]
+[ext_resource type="Texture2D" uid="uid://bu1x4a4wc0nmu" path="res://art/ui/ui elements.png" id="1_cwarq"]
+[ext_resource type="Script" uid="uid://cgaw0dasuwo5w" path="res://scripts/lemon_plot.gd" id="1_j43yt"]
+[ext_resource type="Texture2D" uid="uid://bqbjs6yndcr7x" path="res://art/ui/tools.png" id="3_j43yt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooinf"]
+atlas = ExtResource("1_1yoke")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bei6j"]
+atlas = ExtResource("1_cwarq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xcmq"]
+atlas = ExtResource("3_j43yt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1yoke"]
+radius = 68.0294
+
+[node name="LemonPlot" type="StaticBody2D"]
+script = ExtResource("1_j43yt")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ooinf")
+offset = Vector2(-7, -23)
+
+[node name="CueSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_bei6j")
+offset = Vector2(0, -8)
+
+[node name="ToolHintSprint" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_3xcmq")
+offset = Vector2(0, -6)
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-6, -11, -6, -4, -7, -4, -7, -3, -8, -3, -8, -2, -9, -2, -9, -1, -5, -1, -5, -2, -4, -2, -4, -3, -2, -3, -2, -1, -1, -1, -1, 0, 2, 0, 2, -2, 4, -2, 4, -1, 9, -1, 9, -2, 8, -2, 8, -3, 7, -3, 7, -4, 6, -4, 6, -6, 5, -6, 5, -11)
+
+[node name="CueArea" type="Area2D" parent="."]
+
+[node name="Detect" type="CollisionShape2D" parent="CueArea"]
+visible = false
+shape = SubResource("CircleShape2D_1yoke")
