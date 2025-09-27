@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="When Life Gives you Lemons"
+run/main_scene="uid://cr06ics0fghos"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
